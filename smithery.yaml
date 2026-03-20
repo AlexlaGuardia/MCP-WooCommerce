@@ -1,0 +1,30 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      woocommerceUrl:
+        type: string
+        title: Store URL
+        description: Your WooCommerce store URL (e.g. https://yourstore.com)
+      woocommerceKey:
+        type: string
+        title: Consumer Key
+        description: WooCommerce REST API consumer key (ck_...)
+      woocommerceSecret:
+        type: string
+        title: Consumer Secret
+        description: WooCommerce REST API consumer secret (cs_...)
+    required:
+      - woocommerceUrl
+      - woocommerceKey
+      - woocommerceSecret
+  commandFunction: |-
+    (config) => ({
+      command: 'mcp-woocommerce',
+      env: {
+        WOOCOMMERCE_URL: config.woocommerceUrl,
+        WOOCOMMERCE_KEY: config.woocommerceKey,
+        WOOCOMMERCE_SECRET: config.woocommerceSecret
+      }
+    })
