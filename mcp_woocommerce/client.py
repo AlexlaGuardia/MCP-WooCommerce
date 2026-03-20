@@ -24,6 +24,8 @@ class WooCommerceClient:
     def __init__(self, store_url: str, consumer_key: str, consumer_secret: str):
         # Normalize: strip trailing slash, ensure /wp-json/wc/v3
         base = store_url.rstrip("/")
+        if not base.startswith(("https://", "http://")):
+            base = f"https://{base}"
         if not base.endswith("/wp-json/wc/v3"):
             base = f"{base}/wp-json/wc/v3"
         self.base_url = base
@@ -33,6 +35,7 @@ class WooCommerceClient:
             auth=(consumer_key, consumer_secret),
             headers={"Accept": "application/json"},
             timeout=30.0,
+            follow_redirects=True,
         )
 
     async def _request(self, method: str, path: str, **kwargs: Any) -> Any:

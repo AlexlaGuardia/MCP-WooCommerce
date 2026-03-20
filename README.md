@@ -68,7 +68,7 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-## Tools (32)
+## Tools (34)
 
 ### Store
 | Tool | Description |

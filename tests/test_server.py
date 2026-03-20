@@ -86,7 +86,7 @@ class TestGetClient:
 
 
 class TestToolRegistration:
-    """Verify all 32 tools are registered on the FastMCP instance."""
+    """Verify all 34 tools are registered on the FastMCP instance."""
 
     def test_tool_count(self):
         tools = server.mcp._tool_manager._tools

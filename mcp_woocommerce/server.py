@@ -1,4 +1,4 @@
-"""MCP server for the WooCommerce REST API — 32 tools."""
+"""MCP server for the WooCommerce REST API — 34 tools."""
 
 import json
 import os
@@ -213,7 +213,7 @@ async def update_product(
     product_id: int,
     name: str = "",
     regular_price: str = "",
-    sale_price: str = "",
+    sale_price: str | None = None,
     status: str = "",
     stock_quantity: int = -1,
     description: str = "",
@@ -425,7 +425,10 @@ async def create_order(
     if customer_id:
         body["customer_id"] = customer_id
     if line_items:
-        body["line_items"] = json.loads(line_items)
+        try:
+            body["line_items"] = json.loads(line_items)
+        except json.JSONDecodeError as e:
+            return f"Invalid line_items JSON: {e}"
     billing: dict[str, str] = {}
     if billing_email:
         billing["email"] = billing_email
