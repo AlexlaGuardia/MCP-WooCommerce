@@ -1,14 +1,14 @@
 # mcp-woocommerce
 
-Production-grade MCP server for the **WooCommerce REST API** — 32 tools for products, orders, customers, coupons, reports, shipping, payments, webhooks, and system management.
+Production-grade MCP server for the **WooCommerce REST API** — 34 tools for products, orders, customers, coupons, reports, shipping, payments, webhooks, and system management.
 
 ## Why This Exists
 
-WooCommerce powers **36% of all e-commerce** (5M+ active stores) but has zero comprehensive MCP servers. This fills that gap with 32 production-ready tools covering the entire WooCommerce REST API v3.
+WooCommerce powers **36% of all e-commerce** (5M+ active stores) but has zero comprehensive MCP servers. This fills that gap with 34 production-ready tools covering the entire WooCommerce REST API v3.
 
 ## Features
 
-- **32 tools** across 8 categories (products, orders, customers, coupons, reports, shipping/payments, webhooks, system)
+- **34 tools** across 8 categories (products, orders, customers, coupons, reports, shipping/payments, webhooks, system)
 - **Full CRUD** for products, orders, customers, and coupons
 - **Reports & analytics** — sales reports, top sellers, order totals, product totals
 - **Webhook management** — create, list, delete webhooks for real-time event handling
